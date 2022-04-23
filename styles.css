@@ -1,5 +1,13 @@
+/*===========================*/
+/* Utility And Reset Classes */
+/*===========================*/
 *{
   box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0 !important;
 }
 
 .bold{
@@ -19,6 +27,23 @@
   color: #13902A;
 }
 
+
+
+
+/*=======*/
+/* Icons */
+/*=======*/
+.icon-alarm::before{
+  content: url(./assets/alarm.svg);
+  margin-right: 0.2em;
+}
+
+
+
+
+/*================*/
+/* Main Container */
+/*================*/
 main.container{
   max-width: 1200px;
   padding: 1em;
@@ -36,7 +61,10 @@ div.banner > .banner-img{
 
 
 
+
+/*======================*/
 /* Below Banner section */
+/*======================*/
 .below-banner{
   width: 100%;
   display: grid;
@@ -52,7 +80,6 @@ div.banner > .banner-img{
   grid-template-columns: 1fr 6fr;
   gap: 0.4em;
   padding: 0.5em;
-  /* height: 100px; */
 }
 
 .below-banner > .item > img{
@@ -114,8 +141,6 @@ div.lottery-container > .item > .bottom{
   grid-template-columns: 1fr 1fr;
   padding: 0.8em;
   text-align: center;
-  align-items: center;
-  /* height: 50px; */
 }
 
 div.lottery-container > .item > .bottom > button{
@@ -126,11 +151,21 @@ div.lottery-container > .item > .bottom > button{
   height: 100%;
 }
 
-div.lottery-container > .item > .bottom > p{
+div.lottery-container > .item > .bottom > .time-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.lottery-container > .item > .bottom > .time-container > .time{
   color: white
 }
 
 
+
+/*================================*/
+/* Media Query For Mobile Devices */
+/*================================*/
 @media (max-width: 700px){
   .below-banner{
     grid-template-columns: 1fr;
