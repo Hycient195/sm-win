@@ -1,0 +1,142 @@
+*{
+  box-sizing: border-box;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.not-bold{
+  font-weight: normal;
+}
+
+.no-m-p{
+  margin: 0;
+  padding: 0;
+}
+
+.green-text{
+  color: #13902A;
+}
+
+main.container{
+  max-width: 1200px;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+div.banner{
+ width: 100%;
+ margin-bottom: 2em;
+}
+
+div.banner > .banner-img{
+  width: 100%;
+}
+
+
+
+/* Below Banner section */
+.below-banner{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+}
+
+.below-banner > .item{
+  border-radius: 5px;
+  border: 1px solid silver;
+  display: flex;
+  justify-content: flex-start;
+  grid-template-columns: 1fr 6fr;
+  gap: 0.4em;
+  padding: 0.5em;
+  /* height: 100px; */
+}
+
+.below-banner > .item > img{
+  width: 100%;
+}
+
+.below-banner > .item > .details > .top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.details > .top > h5, .details > .top > a > p{
+  padding: 0;
+  margin: 0.5em;
+  font-size: 0.9em;
+}
+
+.details > .bottom > p.content{
+  padding-right: 0.4em;
+  font-size: 0.9em;
+  color: grey;
+}
+
+/*=================*/
+/* Lottery Section */
+/*=================*/
+section.draws{
+  width: 100%;
+  margin-top: 4em;
+}
+
+section.draws > div.lottery-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+}
+
+div.lottery-container > .item{
+  border: 1px solid silver;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 3fr 50px;
+}
+
+div.lottery-container > .item > .top{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 4fr 5fr;
+  grid-auto-flow: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 0.3em;
+}
+
+div.lottery-container > .item > .bottom{
+  background-color: #0061A3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.8em;
+  text-align: center;
+  align-items: center;
+  /* height: 50px; */
+}
+
+div.lottery-container > .item > .bottom > button{
+  border-radius: 4px;
+  padding: 0em 1em;
+  background-color: #F7D300;
+  border: none;
+  height: 100%;
+}
+
+div.lottery-container > .item > .bottom > p{
+  color: white
+}
+
+
+@media (max-width: 700px){
+  .below-banner{
+    grid-template-columns: 1fr;
+  }
+
+  section.draws > div.lottery-container{
+    grid-template-columns: 1fr;
+  }
+}
