@@ -93,7 +93,7 @@ body{
 }
 
 .btn{
-  padding: 0.7em 1.3em;
+  padding: 1em 1.3em;
   border: none;
   border-radius: 5px;
 }
@@ -258,6 +258,11 @@ section.upcoming-lotteries > .items-grid > .upcoming-item{
   padding: 0.6em;
 }
 
+.upcoming-item > .middle > p:nth-of-type(1)::before{
+  content: url(./assets/america.svg);
+  margin-right: 2px;
+}
+
 .upcoming-item > .top > div.star-container{
   /* padding: 1em; */
   position: relative;
@@ -366,6 +371,11 @@ div.latest-winners > div.latest-winners-body > div.latest-winners-item{
   align-items: center;
 }
 
+div.latest-winners-item > div.winner-item-content > h4::before{
+  content: url(./assets/germany.svg);
+  margin-right: 5px;
+}
+
 div.latest-winners-item > div.winner-item-content *{
   margin: 3px;
   margin-left: 10px;
@@ -427,22 +437,22 @@ footer > div.footer-item:nth-of-type(1) > .item-top{
 }
 
 div.footer-item:nth-of-type(1) > .item-top > .whatsapp-container{
-  margin-right: 7px
+  margin-right: 1em;
 }
 
 div.footer-item:nth-of-type(1) > .item-top > .whatsapp-container > img{
   width: 30px;
 }
 
-div.footer-item:nth-of-type(1) > div.list-title > h4{
+div.footer-item:nth-of-type(1) > div.list-title > div.lists > h4{
   margin: 1.5em  0 var(--base-margin) 0;
 }
-div.footer-item:nth-of-type(1) > div.list-title > ul{
+div.footer-item:nth-of-type(1) > div.list-title > div.lists > ul{
   list-style: none;
   padding-left: 0;
 }
 
-div.footer-item:nth-of-type(1) > div.list-title > ul > li > a{
+div.footer-item:nth-of-type(1) > div.list-title > div.lists > ul > li > a{
   text-decoration: none;
   color: black;
 }
@@ -453,6 +463,10 @@ div.footer-item:nth-of-type(1) > div.list-title > ul > li > a{
 footer > div.footer-item:nth-of-type(2){
   padding: 1em;
   max-width: 300px;
+}
+
+footer > div.footer-item:nth-of-type(2) > p{
+  font-size: 0.8em;
 }
 
 footer > div.footer-item:nth-of-type(2) > p:nth-of-type(2) >{
@@ -467,12 +481,12 @@ footer > div.footer-item:nth-of-type(3){
   width: fit-content;
 }
 
-footer > div.footer-item:nth-of-type(3) > div.icons-container{
+footer > div.footer-item:nth-of-type(3) > div.icons-container-desktop{
   display: flex;
   margin-bottom: 1.5em;
 }
 
-footer > div.footer-item:nth-of-type(3) > div.icons-container > img{
+footer > div.footer-item:nth-of-type(3) > div.icons-container-desktop > img{
   width: 30px;
   margin-right: 7px;
 
@@ -499,6 +513,33 @@ div.payment-methods > div.payment-cards{
 
 .footer-item > div.security > div.security-labels > img:nth-of-type(1){
   margin-right: 0.7em;
+}
+
+div.footer-item:nth-of-type(3) > div.icons-container-mobile{
+  display: none;
+}
+
+
+
+/*================================*/
+/* Media Query For Tablet Devices */
+/*================================*/
+@media (max-width: 1000px){
+  section.upcoming-lotteries > .items-grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 850px){
+  div.lottery-winners > .winners-body > .bottom{
+    grid-template-columns: 1fr !important;
+  }
+
+  footer{
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+    /* background-color: red; */
+  }
 }
 
 
@@ -547,6 +588,9 @@ div.payment-methods > div.payment-cards{
     padding: 1em;
   }
 
+  div.winners-body > .bottom > .right > h4{
+    text-align: center;
+  }
 
   /* FAQ Sub-section */
   /*=================*/
@@ -557,6 +601,9 @@ div.payment-methods > div.payment-cards{
 
   /* Footer Section */
   /*================*/
+  div.footer-container{
+    background-size: 120%;
+  }
   footer{
     padding: 1em;
     display: grid;
@@ -564,8 +611,45 @@ div.payment-methods > div.payment-cards{
     grid-template-columns: 1fr;
   }
 
+  div.footer-item:nth-of-type(1) > div.list-title > .lists{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  div.list-title > .lists > .list > li{
+    padding: 0.3em 0;
+  }
+
   div.footer-item:nth-last-of-type(2){
     width: 100%;
     padding: 0 !important;
   }
+
+  div.footer-item:nth-of-type(3){
+    width: 100% !important;
+    display: flex !important;
+    gap: 2em;
+    /* justify-content: space-between !important; */
+  }
+
+  div.footer-item:nth-of-type(3) > div.icons-container-desktop{
+    display: none !important;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* grid-template-columns: 1fr 1fr; */
+  }
+
+  footer > div.footer-item:nth-of-type(3) > div.security > div.icons-container-mobile{
+    display: flex;
+    margin-bottom: 1.5em;
+    margin-top: var(--base-margin);
+  }
+  
+  footer > div.footer-item:nth-of-type(3) > div.security  > div.icons-container-mobile > img{
+    width: 30px;
+    margin-right: 7px;
+  
+  }
+
 }
