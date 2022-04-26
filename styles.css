@@ -1,8 +1,25 @@
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/font/Roboto/Roboto-Regular.ttf);
+}
+
 /*===========================*/
 /* Utility And Reset Classes */
 /*===========================*/
 *{
   box-sizing: border-box;
+  font-family: Roboto;
+}
+
+:root{
+  --red: #F30000;
+  --green: #13902A;
+  --yellow: #F7D300;
+  --blue: #0061A3;
+  --white: white;
+  --silver: #E0E0E0;
+  --base-margin: 0.8em;
+  --base-padding: 0.8em;
 }
 
 body{
@@ -24,9 +41,66 @@ body{
 }
 
 .green-text{
-  color: #13902A;
+  color: var(--green);
 }
 
+.bg-green{
+  background-color: var(--green)
+}
+
+.red-text{
+  color: var(--red);
+}
+
+.bg-red{
+  background-color: var(--red);
+}
+
+.yellow-text{
+  color: var(--yellow);
+}
+
+.bg-yellow{
+  background-color: var(--yellow);
+}
+
+.blue-text{
+  color: var(--blue);
+}
+
+.bg-blue{
+  background-color: var(--blue);
+}
+
+.white-text{
+  color: var(--white);
+}
+
+.silver-text{
+  color: var(--silver);
+}
+
+.grey-text{
+  color: gray;
+}
+
+.fullwidth{
+  width: 100%;
+}
+
+.centralize-text{
+  text-align: center;
+}
+
+.btn{
+  padding: 0.7em 1.3em;
+  border: none;
+  border-radius: 5px;
+}
+
+.margin-1{
+  margin: var(--base-margin);
+}
 
 
 
@@ -53,6 +127,8 @@ main.container{
 div.banner{
  width: 100%;
  margin-bottom: 2em;
+ max-width: 1200px;
+ margin: 0 auto;
 }
 
 div.banner > .banner-img{
@@ -108,7 +184,7 @@ div.banner > .banner-img{
 /*=================*/
 section.draws{
   width: 100%;
-  margin-top: 4em;
+  margin: 4em 0;
 }
 
 section.draws > div.lottery-container{
@@ -162,6 +238,272 @@ div.lottery-container > .item > .bottom > .time-container > .time{
 }
 
 
+/*============================*/
+/* Upcoming Lotteries Section */
+/*============================*/
+section.upcoming-lotteries{
+
+}
+
+section.upcoming-lotteries > .items-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1em;
+  padding: 1em;
+}
+
+section.upcoming-lotteries > .items-grid > .upcoming-item{
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 0.6em;
+}
+
+.upcoming-item > .top > div.star-container{
+  /* padding: 1em; */
+  position: relative;
+  /* float: right; */
+
+  top: 50%;
+  left: 85% !important;
+  width: fit-content
+}
+
+.upcoming-item > .middle{
+  margin: 0.8em 0 0.6em;
+}
+
+.upcoming-item > .middle > p.time{
+  display: flex;
+  justify-content: center;
+}
+.upcoming-item > .middle > p.time::before{
+  content: url(./assets/alarm-blue.svg);
+  margin-right: 3px;
+  position: relative;
+  bottom: 0;
+}
+
+.upcoming-item > .middle > *{
+  margin: 0.2em 0;
+}
+
+section.upcoming-lotteries > p.more-details{
+  text-align: right;
+}
+
+
+
+
+/*=================*/
+/* Winners Section */
+/*=================*/
+section.winners-section{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1em;
+  
+}
+
+div.winners-body{
+  border: 1px solid var(--silver);
+  margin-top: 1em;
+  border-radius: 5px;
+  padding: 1em 1em 1em 0;
+}
+
+section.winners-section > div.lottery-winners > div.winners-body > div.bottom{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+div.bottom > div.left > div.sub-bottom{
+  display: flex;
+  margin: var(--base-margin) 0 var(--base-margin) 0.4em;
+}
+
+div.sub-bottom > 
+
+div.bottom > div.left > div.sub-bottom > div.sub-left{
+  padding-right: 7px;
+}
+
+div.bottom > div.right{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+
+/*========================*/
+/* Latest Winners section */
+/*========================*/
+div.latest-winners > div.latest-winners-heading{
+  padding: var(--base-margin);
+  text-align: center;
+  border: 1px solid var(--silver);
+  margin-top: 1em;
+  border-radius: 5px;
+}
+
+div.latest-winners-heading > *, div.latest-winners-heading > * > *{
+  margin: 0.2em;
+}
+
+div.latest-winners-heading > div.sub-bottom{
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+
+div.latest-winners > div.latest-winners-body > div.latest-winners-item{
+  border: 1px solid var(--silver);
+  padding: calc(var(--base-padding) / 2);
+  display: flex;
+  flex-flow: row;
+  border: 1px solid var(--silver);
+  border-radius: 5px;
+  margin: 1em 0;
+  align-items: center;
+}
+
+div.latest-winners-item > div.winner-item-content *{
+  margin: 3px;
+  margin-left: 10px;
+
+}
+
+
+
+
+/*=================*/
+/* FAQ Sub-section */
+/*=================*/
+section.faq-sub-section{
+  width: 70%;
+}
+
+section.faq-sub-section > ul.faq-content{
+  list-style: none;
+  padding-left: 1em !important;
+}
+
+ul.faq-content > li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--silver);
+  
+}
+
+ul.faq-content > li > p{
+  margin: var(--base-margin);
+}
+
+
+
+/*================*/
+/* Footer Section */
+/*================*/
+div.footer-container{
+  width: 100%;
+  max-width: 1200px;
+  background-image: url(./assets/stars-bg.svg);
+  margin: 0 auto;
+  margin-top: 2em;
+  background-repeat: no-repeat;
+
+}
+
+footer{ 
+  display: flex;
+  justify-content: space-between;
+  padding: 7em 6em 2em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+footer > div.footer-item:nth-of-type(1) > .item-top{
+  display: flex;
+  flex-direction: row;
+}
+
+div.footer-item:nth-of-type(1) > .item-top > .whatsapp-container{
+  margin-right: 7px
+}
+
+div.footer-item:nth-of-type(1) > .item-top > .whatsapp-container > img{
+  width: 30px;
+}
+
+div.footer-item:nth-of-type(1) > div.list-title > h4{
+  margin: 1.5em  0 var(--base-margin) 0;
+}
+div.footer-item:nth-of-type(1) > div.list-title > ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+div.footer-item:nth-of-type(1) > div.list-title > ul > li > a{
+  text-decoration: none;
+  color: black;
+}
+
+
+/* Second Footer item */
+/*====================*/
+footer > div.footer-item:nth-of-type(2){
+  padding: 1em;
+  max-width: 300px;
+}
+
+footer > div.footer-item:nth-of-type(2) > p:nth-of-type(2) >{
+  line-height: 12px;
+}
+
+
+/* Third Footer item */
+/*===================*/
+
+footer > div.footer-item:nth-of-type(3){
+  width: fit-content;
+}
+
+footer > div.footer-item:nth-of-type(3) > div.icons-container{
+  display: flex;
+  margin-bottom: 1.5em;
+}
+
+footer > div.footer-item:nth-of-type(3) > div.icons-container > img{
+  width: 30px;
+  margin-right: 7px;
+
+}
+
+div.payment-methods > h4{
+  margin: 1em 0 7px 0;
+}
+
+div.payment-methods > div.payment-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.footer-item > div.security > h4{
+  margin: 1.9em 0 0.6em 0;
+}
+
+.footer-item > div.security > div.security-labels{
+  display: flex;
+  align-items: center;
+}
+
+.footer-item > div.security > div.security-labels > img:nth-of-type(1){
+  margin-right: 0.7em;
+}
+
+
+
+
 
 /*================================*/
 /* Media Query For Mobile Devices */
@@ -173,5 +515,57 @@ div.lottery-container > .item > .bottom > .time-container > .time{
 
   section.draws > div.lottery-container{
     grid-template-columns: 1fr;
+  }
+
+
+  /*============================*/
+  /* Upcoming Lotteries section */
+  section.upcoming-lotteries > .items-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /*=================*/
+  /* Winners Section */
+  section.winners-section{
+    grid-template-columns: 1fr;
+  }
+
+  section.winners-section > div.lottery-winners > div.winners-body > div.bottom{
+    grid-template-columns: 1fr;
+  }
+
+  div.winners-body{
+    padding: 1em;
+  }
+
+  div.winners-body > .bottom > .left > .gramp-img-container > img{
+    width: 100%;
+  }
+
+  div.winners-body > .bottom > .right{
+    padding: 1em;
+  }
+
+
+  /* FAQ Sub-section */
+  /*=================*/
+  section.faq-sub-section{
+    display: none;
+  }
+
+
+  /* Footer Section */
+  /*================*/
+  footer{
+    padding: 1em;
+    display: grid;
+    /* grid-column: repeat(2, 1fr); */
+    grid-template-columns: 1fr;
+  }
+
+  div.footer-item:nth-last-of-type(2){
+    width: 100%;
+    padding: 0 !important;
   }
 }
